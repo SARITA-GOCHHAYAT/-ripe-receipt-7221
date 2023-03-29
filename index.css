@@ -1,0 +1,197 @@
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #navbar{
+            width: 100%;
+            height: 60px;
+            display: flex;
+            position: sticky;
+            justify-content: space-between;
+            position: sticky;
+            margin-top: 3px;
+        }
+        #navleft{
+            width: 60%;
+            height: 100%;
+            display: flex;
+        }
+        #logo{
+            width: 20%;
+            height: 100%;
+        }
+        #logo>img{
+            width: 100%;
+            height: 100%;
+        }
+        #navleftdiv{
+            display: flex;
+            width: 80%;
+            justify-content: space-around;
+            align-items: center;
+            font-family: sans-serif;
+        }
+        #navright{
+            width: 15%;
+            display: flex;
+            height: 100%;
+            justify-content: space-around;
+            text-align: center;
+        }
+        /* #navright>input {
+            width: 40%;
+            height: 35px;
+            background-color: rgb(214, 208, 208);
+            border: 1px solid rgb(214, 208, 208);
+            text-align: center;
+            border-radius: 5px;
+            margin: auto;
+        } */
+        i{
+            height: 30px;
+            width: 30px;
+            color: #5D9C59;
+        }
+        #icon{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+        sup { 
+            color: #5D9C59;
+        }
+        #navleftdiv>p {
+            cursor: pointer;
+            position: relative;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        #navleftdiv>p:hover {
+            color: #5D9C59;
+        }
+
+       #navleftdiv>p:after {
+            content: "";
+            position: absolute;
+            background-color: #5D9C59;
+            height: 3px;
+            width: 0px;
+            left: 15px;
+            bottom: -10px;
+            align-items: center;
+        }
+
+        #navleftdiv>p:hover:after {
+            width: 20px;
+        }
+
+        #top1,
+        #top2 {
+            width: 100%;
+            text-align: center;
+            margin-top: 4px;
+
+        }
+
+        #top1>img {
+            width: 100%;
+            margin: auto;
+        }
+
+        #top2>img,
+        #top3>img,.mid1>img {
+            width: 100%;
+        }
+
+        #top3,.mid1 {
+            width: 100%;
+            margin-top: 50px;
+        }
+        .flexbox{
+            display: flex;
+            margin-top: 50px;
+            width: 100%;
+        }
+        .gridbox{
+            display:flex;
+            width: 70%;
+            gap: 0.5%;
+        }
+        .heading{
+            margin-top: 40px;
+            font-weight: bolder;
+            font-size: 30px;
+        }
+        #collection{
+            width: 100%;
+            margin: auto;
+        }
+        #container{
+            display: flex;
+
+            gap: 10px;
+        }
+        #container>div>img{
+            width: 100%;
+            height: 500px;
+        }
+        #container2{
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .footerimg>img{
+width: 100%;
+margin-top: -1px;
+        }
+        #icon{
+            align-items: center;
+        }
+        @media screen and (max-width:800px){
+
+            #navbar{
+                height: auto;
+                font-size: 20px;
+            }
+            #navleftdiv>p:after{
+                display: none;
+            } 
+            #navleft{
+                width: 40%;
+                height: auto;
+            }
+            #navleftdiv{
+               flex-direction: column;
+                width: 40%;
+                align-items: center;
+
+            }
+            #logo{
+                width: 40%;
+                height: 100%;
+            }
+            #navright>div{
+                flex-direction: column;  
+            }
+            .gridbox{
+                display: none;
+            }
+            .flexbox{
+               margin: auto;
+            }
+            
+        }
+        @media  screen and (max-width:450px) {
+            #logo{
+                width: 40%;
+                height: 60%;
+            }
+        }
