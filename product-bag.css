@@ -1,0 +1,150 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+#navbar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    position: sticky;
+    justify-content: space-between;
+    position: sticky;
+    margin-top: 13px;
+}
+#navleft{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    margin-left: 40%;
+}
+#logo{
+    width: 20%;
+    height: 100%;
+}
+#logo>img{
+    width: 100%;
+    height: 100%;
+}
+#navleftdiv{
+    display: flex;
+    font-family: sans-serif;
+    margin: auto;
+    align-items: center;
+}
+#navright{
+    width: 15%;
+    display: flex;
+    height: 100%;
+    justify-content: space-around;
+    text-align: center;
+}
+#navleft>input {
+    width: 60%;
+    height: 35px;
+    background-color: rgb(214, 208, 208);
+    border: 1px solid rgb(214, 208, 208);
+    text-align: center;
+    border-radius: 5px;
+    margin-left: -8px;
+    border: 3px solid #5D9C59;
+}
+.fa-magnifying-glass{
+    margin-top:7px;
+    margin-left: 5px;
+}
+i{
+    height: 30px;
+    width: 30px;
+    color: #5D9C59;
+}
+#icon{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+#icon>div{
+    direction: none;
+}
+#top{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    
+}
+#top>div{
+height: 200px;
+width: 150px;
+text-align: center;
+font-weight: bold;
+color:#5D9C59 ;
+}
+
+#top>div>img{
+width: 100%;
+height: 75%;
+border-radius: 100%;
+border: 5px solid #5D9C59;
+}
+#container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(auto,300px);
+    text-align: center;
+    gap: 3%;
+    margin-left:15px;
+    margin-right: 15px;
+}
+#container>div{
+    margin: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: #b3e0b0;
+}
+#topdiv>img{
+   width: 75%;
+   height: 300px;
+   margin-top: 3%;
+   margin-bottom: 3%;
+}
+.sign{
+margin-top: 30%;
+font-size:30px;
+font-weight:bolder;
+color:#5D9C59;
+}
+#cont-div{
+display:flex;
+flex-direction:column;
+}
+#topdiv{
+display:flex;
+gap:2px;
+justify-content: space-around;
+}
+#buttdiv{
+    display: flex;
+flex-direction: column;
+align-items: center;
+margin-bottom: 3%;
+}
+#buttdiv>button{
+height:30px;
+width: 70%;
+margin-top: 2%;
+background-color: #5D9C59;
+border: 1px solid #5D9C59;
+border-radius: 5%;
+color: azure;
+font-weight: bold;
+}
+#buttdiv>button:hover{
+    background-color: rgb(217, 223, 221);
+    color: #5D9C59;
+    border: 3px solid #5D9C59;
+}
