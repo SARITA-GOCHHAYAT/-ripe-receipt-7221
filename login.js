@@ -7,7 +7,7 @@ let home=document.getElementById("home");
 home.addEventListener("click",function(){
     window.location.href=""  ;
 });
- let lsSign=JSON.parse(localStorage.getItem("sdata"))||[];
+let lsSign=JSON.parse(localStorage.getItem("signdata"))||[];
   signin.addEventListener("click",function(event){
     event.preventDefault();
  window.location.href="http://127.0.0.1:5501/signin.html"  ;
@@ -16,10 +16,13 @@ home.addEventListener("click",function(){
     event.preventDefault();
 lsSign.forEach(function(e) {
     if(e.email === email.value && e.password ===password.value){
-        alert("LogIn sucessfully");
+        alert("login successfully");
         window.location.href= "http://127.0.0.1:5501/product-bag.html";
-    }else{
-        alert("New User please SignIn");
+    }else if(e.email !== email.value && e.password ===password.value || e.email === email.value && e.password !==password.value ){
+   alert("wrong credential");
+    }
+    else{
+        alert("new user");
         window.location.href= "http://127.0.0.1:5501/signin.html";
     } 
 });

@@ -13,15 +13,18 @@ login.addEventListener("click",function(event){
 window.location.href="http://127.0.0.1:5501/login.html";
  });
    
+
+
  signin.addEventListener("click",function(event){
     event.preventDefault();
     let obj={
-name:nameinp.value,
-email:email.value,
-password:password.value,
-    }
-lsSign.push(obj);
-localStorage.setItem("signdata",JSON.stringify(lsSign));
-
+        name:nameinp.value,
+        email:email.value,
+        password:password.value,
+            }
+        lsSign.push(obj);
+        localStorage.setItem("signdata",JSON.stringify(lsSign));
+        alert("signin successfully");
+        window.location.href= "http://127.0.0.1:5501/product-bag.html";
  });
   
