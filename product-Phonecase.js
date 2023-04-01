@@ -21,7 +21,7 @@ let empty=[
       "name": "Couple-case cover", "price": 450, "sex": "men", "type": "phone-case",
       "image1": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs610HuOZodWCK1ErwB7c9PzyVZ_YhP86b1A&usqp=CAU",
       "image2": "https://www.printbebo.in/wp-content/uploads/2022/04/140-You-Me-Custom-Name-Couple-Phone-Cover.jpg",
-      "image3": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaR7D4lUseSDA_Y5TyLWg4yo1q0P6_N9MZlqvf0dngjxqjZUIOXOdawP4VvDcU8fVvY3s&usqp=CAU",
+      "image3": "https://cdn.shopify.com/s/files/1/0075/8707/0004/products/Sweet_Love_Couple_Mobile_Cover_1024x1024.jpg?v=1571736211",
     },
     {
       "name": "Soft case-cover", "price": 295,"sex": "female","type": "phone-case",
@@ -59,17 +59,7 @@ let empty=[
 let search=document.getElementById("input");
 let wishdata=JSON.parse(localStorage.getItem("wishlist"))||[];
 let cartdata=JSON.parse(localStorage.getItem("cartlist"))||[];
-// let empty=[];
-// fetch(api).then(function(res){
-//     return res.json();
-// })
-// .then(function(data){
-//     empty=data;
-//     display(data);
-// })
-// .catch(function(err){
-//     console.log(err);
-// })
+
 display(empty);
 function display(data){
     cont.innerHTML="";
@@ -105,43 +95,49 @@ let botdiv=document.createElement("div");
 let name=document.createElement("h2");
 name.innerHTML=e.name;
 let price=document.createElement("h4");
-price.innerHTML=e.price;
-let discount=document.createElement("h4");
-discount.innerHTML=e.discount;
+price.innerHTML=`₹${e.price}`;
 let sex=document.createElement("p");
 sex.innerHTML=e.sex;
 let type=document.createElement("p");
 type.innerHTML=e.type;
-let color=document.createElement("p");
-color.innerHTML=e.color;
 let buttdiv=document.createElement("div");
 buttdiv.setAttribute("id","buttdiv");
 let wishbtn=document.createElement("button");
 wishbtn.innerHTML="Wishlist";
 wishbtn.setAttribute("id","wishbtn");
 wishbtn.addEventListener("click",function(){
-    wishdata.push(e);
-    localStorage.setItem("wishlist",JSON.stringify(wishdata));
-})
-
-let cartbtn=document.createElement("button");
-cartbtn.innerHTML="Add To Cart";
-cartbtn.setAttribute("id","cartbtn");
-cartbtn.addEventListener("click",function(){
-    cartdata.push(e);
-    localStorage.setItem("cartlist",JSON.stringify(cartdata));
-})
+    if(check(e)){
+       alert("Product Already in Wishlist");
+    }else{
+       wishdata.push(e);
+       localStorage.setItem("wishlist",JSON.stringify(wishdata));
+       alert("Product Added to Wishlist");
+    }
+   })
+   
+   let cartbtn=document.createElement("button");
+   cartbtn.innerHTML="Add To Cart";
+   cartbtn.setAttribute("id","cartbtn");
+   cartbtn.addEventListener("click",function(){
+    if(check1(e)){
+        alert("Product Already in Cart");
+    }else{
+        cartdata.push({...e,quantity:1});
+        localStorage.setItem("cartlist",JSON.stringify(cartdata));
+        alert("Product Added to Cart");
+    }
+   })
 
 buttdiv.append(wishbtn,cartbtn);
 topdiv.append(left,img,right);
-botdiv.append(name,price,sex,type,color);
+botdiv.append(name,price,sex,type);
 div.append(topdiv,botdiv,buttdiv);
 cont.append(div);
     });
 }
 search.addEventListener("input",function(){
     let filtered=empty.filter(function(e){
-        if(e.type.toUpperCase().includes(search.value.toUpperCase())===true){
+        if(e.name.toUpperCase().includes(search.value.toUpperCase())===true){
           return true;
         }else{
             return false;
@@ -178,11 +174,15 @@ image3.addEventListener("click",function(){
 })
 
 
-let extrap=document.getElementById("extrap1");
-extrap.addEventListener("click",function(){
-    window.location.href= "http://127.0.0.1:5501/product-Phonecase.html";
+let extrap1=document.getElementById("extrap1");
+extrap1.addEventListener("click",function(){
+    window.location.href= "http://127.0.0.1:5501/product-bag.html";
 });
 
+let extrap2=document.getElementById("extrap2");
+extrap2.addEventListener("click",function(){
+    window.location.href= "http://127.0.0.1:5501/product-watch.html";
+});
 
 let select=document.getElementById("select");
 select.addEventListener("change",function(){
@@ -202,3 +202,21 @@ select.addEventListener("change",function(){
         display(selectData);
     }
 })
+
+function check(e){
+    for(let i=0;i<wishdata.length;i++){
+        if(e.name===wishdata[i].name){
+            return true;
+        }
+    }
+    return false;
+    }
+    function check1(e){
+        for(let i=0;i<cartdata.length;i++){
+            if(e.name===cartdata[i].name){
+                return true;
+            }
+        }
+        return false;
+    }
+  
