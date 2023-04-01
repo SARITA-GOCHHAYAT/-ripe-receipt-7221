@@ -1,0 +1,19 @@
+h2{
+    font-size: 40px;
+    font-weight: bolder;
+    color: #5D9C59;
+    text-align: center;
+    text-decoration: 5px solid  #5D9C59 underline;
+    margin-top: 10px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 300px;
+}
+form>label{
+    color: #5D9C59;
+    font-weight: bold;
+    font-size: 20px;
+}

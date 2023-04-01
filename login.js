@@ -4,9 +4,6 @@
  let email=document.getElementById("email");
  let password=document.getElementById("password");
 let home=document.getElementById("home");
-home.addEventListener("click",function(){
-    window.location.href=""  ;
-});
 let lsSign=JSON.parse(localStorage.getItem("signdata"))||[];
   signin.addEventListener("click",function(event){
     event.preventDefault();

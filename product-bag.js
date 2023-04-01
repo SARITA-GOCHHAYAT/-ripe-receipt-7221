@@ -53,36 +53,42 @@ let botdiv=document.createElement("div");
 let name=document.createElement("h2");
 name.innerHTML=e.name;
 let price=document.createElement("h4");
-price.innerHTML=e.price;
-let discount=document.createElement("h4");
-discount.innerHTML=e.discount;
+price.innerHTML=`₹${e.price}`;
 let sex=document.createElement("p");
 sex.innerHTML=e.sex;
 let type=document.createElement("p");
 type.innerHTML=e.type;
-let color=document.createElement("p");
-color.innerHTML=e.color;
 let buttdiv=document.createElement("div");
 buttdiv.setAttribute("id","buttdiv");
 let wishbtn=document.createElement("button");
 wishbtn.innerHTML="Wishlist";
 wishbtn.setAttribute("id","wishbtn");
 wishbtn.addEventListener("click",function(){
-    wishdata.push(e);
-    localStorage.setItem("wishlist",JSON.stringify(wishdata));
-})
-
-let cartbtn=document.createElement("button");
-cartbtn.innerHTML="Add To Cart";
-cartbtn.setAttribute("id","cartbtn");
-cartbtn.addEventListener("click",function(){
-    cartdata.push(e);
-    localStorage.setItem("cartlist",JSON.stringify(cartdata));
-})
+    if(check(e)){
+       alert("Product Already in Wishlist");
+    }else{
+       wishdata.push(e);
+       localStorage.setItem("wishlist",JSON.stringify(wishdata));
+       alert("Product Added to Wishlist");
+    }
+   })
+   
+   let cartbtn=document.createElement("button");
+   cartbtn.innerHTML="Add To Cart";
+   cartbtn.setAttribute("id","cartbtn");
+   cartbtn.addEventListener("click",function(){
+        if(check1(e)){
+            alert("Product Already in Cart");
+        }else{
+            cartdata.push({...e,quantity:1});
+            localStorage.setItem("cartlist",JSON.stringify(cartdata));
+            alert("Product Added to Cart");
+        }
+   })
 
 buttdiv.append(wishbtn,cartbtn);
 topdiv.append(left,img,right);
-botdiv.append(name,price,sex,type,color);
+botdiv.append(name,price,sex,type);
 div.append(topdiv,botdiv,buttdiv);
 cont.append(div);
     });
@@ -126,9 +132,14 @@ image3.addEventListener("click",function(){
 })
 
 
-let extrap=document.getElementById("extrap1");
-extrap.addEventListener("click",function(){
+let extrap1=document.getElementById("extrap1");
+extrap1.addEventListener("click",function(){
     window.location.href= "http://127.0.0.1:5501/product-Phonecase.html";
+});
+
+let extrap2=document.getElementById("extrap2");
+extrap2.addEventListener("click",function(){
+    window.location.href= "http://127.0.0.1:5501/product-watch.html";
 });
 
 
@@ -150,3 +161,20 @@ select.addEventListener("change",function(){
         display(selectData);
     }
 })
+function check(e){
+    for(let i=0;i<wishdata.length;i++){
+        if(e.name===wishdata[i].name){
+            return true;
+        }
+    }
+    return false;
+    }
+
+    function check1(e){
+        for(let i=0;i<cartdata.length;i++){
+            if(e.name===cartdata[i].name){
+                return true;
+            }
+        }
+        return false;
+    }
