@@ -1,7 +1,6 @@
 let cont=document.getElementById("container");
 let cartdata=JSON.parse(localStorage.getItem("cartlist"))||[];
 let total=document.getElementById("total");
-display(cartdata);
 function display(data){
     cont.innerHTML="";
     data.forEach(e => {
@@ -48,8 +47,9 @@ decrement.innerHTML="-";
 decrement.addEventListener("click",function(){
     if(e.quantity>1){
         e.quantity--;
-        quantity.innerHTML=e.quantity;
     }
+    localStorage.setItem("cartlist",JSON.stringify(cartdata));
+    display();
 })
 let quantity=document.createElement("span");
 quantity.innerHTML=e.quantity;
@@ -57,7 +57,8 @@ let increment=document.createElement("button");
 increment.innerHTML="+";
 increment.addEventListener("click",function(){
     e.quantity++;
-    quantity.innerHTML=e.quantity;
+    localStorage.setItem("cartlist",JSON.stringify(cartdata));
+    display();
 })
 let buttdiv=document.createElement("div");
 buttdiv.setAttribute("id","buttdiv");
@@ -65,12 +66,12 @@ let removebtn=document.createElement("button");
 removebtn.innerHTML="Remove";
 removebtn.setAttribute("id","remove");
 removebtn.addEventListener("click",function(){
-    wishdata=wishdata.filter(function(ele){
+    cartdata=cartdata.filter(function(ele){
         return ele.name!=e.name;
     });
     localStorage.setItem("cartlist",JSON.stringify(cartdata));
     display(cartdata);
-   alert("Product deleted from cart");
+   alert("Product deleted from cartlist");
    })
 butdiv.append(decrement,quantity,increment);
 buttdiv.append(removebtn);
@@ -78,13 +79,21 @@ topdiv.append(left,img,right);
 botdiv.append(name,price,sex,type);
 div.append(topdiv,botdiv,butdiv,buttdiv);
 cont.append(div);
+
+
     });
+   
     let sum=0;
-    for(let i=0;i<cartdata.length;i++){
-        sum=sum+cartdata[i].quantity*cartdata[i].price;
-    }
-    total.innerHTML=`₹${sum}`;
+for(let i=0;i<cartdata.length;i++){
+    sum=sum+cartdata[i].quantity*cartdata[i].price;
 }
+total.innerHTML=`₹${sum}`;
+
+
+}
+
+  
+
 
     function check1(e){
         for(let i=0;i<cartdata.length;i++){
@@ -94,8 +103,11 @@ cont.append(div);
         }
         return false;
     }
+
+   
   
     let payment=document.getElementById("payment");
     payment.addEventListener("click",function(){
         window.location.href="http://127.0.0.1:5501/checkout.html";
     })
+    display(cartdata);
