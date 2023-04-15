@@ -26,7 +26,7 @@ if(flag==true){
     alert("login successfully");
     email.value="";
     password.value="";
-    window.location.href= "http://127.0.0.1:5500/-ripe-receipt-7221/product-bag.html";
+    window.location.href= "./product-bag.html";
 }else{
     let a=false;
     for(let i=0;i<lsSign.length;i++){
@@ -42,7 +42,7 @@ if(flag==true){
         email.value="";
     password.value="";
         alert("new user😲,Please signin from here.");
-        window.location.href= "http://127.0.0.1:5500/-ripe-receipt-7221/signin.html";
+        window.location.href= "./signin.html";
 }
 }
     }

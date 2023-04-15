@@ -176,12 +176,12 @@ image3.addEventListener("click",function(){
 
 let extrap1=document.getElementById("extrap1");
 extrap1.addEventListener("click",function(){
-    window.location.href= "http://127.0.0.1:5501/product-bag.html";
+    window.location.href= "./product-bag.html";
 });
 
 let extrap2=document.getElementById("extrap2");
 extrap2.addEventListener("click",function(){
-    window.location.href= "http://127.0.0.1:5501/product-watch.html";
+    window.location.href= "./product-watch.html";
 });
 
 let select=document.getElementById("select");

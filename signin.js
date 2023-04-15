@@ -10,7 +10,7 @@
 
 login.addEventListener("click",function(event){
     event.preventDefault();
-window.location.href="http://127.0.0.1:5500/-ripe-receipt-7221/login.html";
+window.location.href="./login.html";
  });
  signin.addEventListener("click",function(event){
     event.preventDefault();
@@ -30,7 +30,7 @@ window.location.href="http://127.0.0.1:5500/-ripe-receipt-7221/login.html";
             email.value="";
     password.value="";
             alert("Hey! You are a Existing User,Please login from here🤗🤗🤗.");
-            window.location.href="http://127.0.0.1:5500/-ripe-receipt-7221/login.html";
+            window.location.href="./login.html";
         }      
      else{
     let obj={
@@ -44,7 +44,7 @@ window.location.href="http://127.0.0.1:5500/-ripe-receipt-7221/login.html";
     password.value="";
     nameinp.value="";
         alert("signin successfully");
-        window.location.href= "http://127.0.0.1:5500/-ripe-receipt-7221/product-bag.html";
+        window.location.href= "./product-bag.html";
     }
 }
  });

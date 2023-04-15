@@ -177,12 +177,12 @@ image3.addEventListener("click",function(){
 
 let extrap1=document.getElementById("extrap1");
 extrap1.addEventListener("click",function(){
-    window.location.href= "http://127.0.0.1:5501/product-Bag.html";
+    window.location.href= "./product-Bag.html";
 });
 
 let extrap2=document.getElementById("extrap2");
 extrap2.addEventListener("click",function(){
-    window.location.href= "http://127.0.0.1:5501/product-Phonecase.html";
+    window.location.href= "./product-Phonecase.html";
 });
 
 

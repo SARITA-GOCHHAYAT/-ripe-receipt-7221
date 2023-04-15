@@ -26,7 +26,7 @@ let zipcode=document.getElementById("zipcode");
 let but=document.createElement("button");
 but.innerHTML="OK";
 but.addEventListener("click",function(){
-window.location.href="http://127.0.0.1:5501/index.html";
+window.location.href="./index.html";
 })
 but.style.display="block";
 but.style.margin="5%";
@@ -53,7 +53,7 @@ detail.append("name-  "+name+",   ","email-  "+email+",   ","Phoneno-  "+phoneno
    }
    else{
     alert("Hey,You are a NewUser");
-    window.location.href="http://127.0.0.1:5501/signin.html";
+    window.location.href="./signin.html";
    }
 })
 function check(data){

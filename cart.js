@@ -108,6 +108,6 @@ total.innerHTML=`₹${sum}`;
   
     let payment=document.getElementById("payment");
     payment.addEventListener("click",function(){
-        window.location.href="http://127.0.0.1:5500/-ripe-receipt-7221/checkout.html";
+        window.location.href="./checkout.html";
     })
     display(cartdata);
