@@ -16,30 +16,35 @@ let lsSign=JSON.parse(localStorage.getItem("signdata"))||[];
         alert("Please fill the all inputs.😑");
     }else{
         let flag=false;
-lsSign.forEach(function(e) {
-    if(e.email === email.value && e.password ===password.value){
-        alert("login successfully");
-        window.location.href= "http://127.0.0.1:5500/-ripe-receipt-7221/product-bag.html";
+for(let i=0;i<lsSign.length;i++) {
+    if(lsSign[i].email === email.value && lsSign[i].password ===password.value){
         flag=true;
-     return flag;
+    break;
     }
-    
-});
-if(flag==false){
-    let a=false;
-lsSign.forEach(function(e){
-    if( e.email === email.value && e.password !==password.value ){
-    a=true;
-    alert("wrong credential");
+}
+if(flag==true){
+    alert("login successfully");
+    email.value="";
     password.value="";
-    return a;
+    window.location.href= "http://127.0.0.1:5500/-ripe-receipt-7221/product-bag.html";
+}else{
+    let a=false;
+    for(let i=0;i<lsSign.length;i++){
+        if( lsSign[i].email === email.value && lsSign[i].password !==password.value ){
+            a=true;
+            break;
+            } 
     }
-});
-    if(a===false){
+    if(a==true){
+        alert("wrong credential,please put correct password.");
+            password.value="";
+    }else{
+        email.value="";
+    password.value="";
         alert("new user😲,Please signin from here.");
         window.location.href= "http://127.0.0.1:5500/-ripe-receipt-7221/signin.html";
 }
 }
-} 
+    }
+
 });
- 

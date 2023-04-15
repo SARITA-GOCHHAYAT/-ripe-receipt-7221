@@ -26,6 +26,9 @@ window.location.href="http://127.0.0.1:5500/-ripe-receipt-7221/login.html";
                }
         }
         if(flag===true){
+            nameinp.value="";
+            email.value="";
+    password.value="";
             alert("Hey! You are a Existing User,Please login from here🤗🤗🤗.");
             window.location.href="http://127.0.0.1:5500/-ripe-receipt-7221/login.html";
         }      
@@ -37,6 +40,9 @@ window.location.href="http://127.0.0.1:5500/-ripe-receipt-7221/login.html";
             }
         lsSign.push(obj);
         localStorage.setItem("signdata",JSON.stringify(lsSign));
+        email.value="";
+    password.value="";
+    nameinp.value="";
         alert("signin successfully");
         window.location.href= "http://127.0.0.1:5500/-ripe-receipt-7221/product-bag.html";
     }
