@@ -1,11 +1,15 @@
 let form=document.querySelector("form");
+let input=document.querySelectorAll("form>input");
 let detail=document.getElementById("detail");
 let cont=document.querySelector("container");
 let lsSign=JSON.parse(localStorage.getItem("signdata"))||[];
 let lsChiku=JSON.parse(localStorage.getItem("chikudata"))||[];
 form.addEventListener("submit",function(event){
     event.preventDefault();
-   if(check(lsSign)){
+    if(input==""){
+        alert("please fill all thee inputs");
+    }
+  else if(check(lsSign)){
     Swal.fire({
         position: 'top-end',
         icon: 'success',

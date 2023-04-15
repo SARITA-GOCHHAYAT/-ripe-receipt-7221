@@ -49,7 +49,7 @@ decrement.addEventListener("click",function(){
         e.quantity--;
     }
     localStorage.setItem("cartlist",JSON.stringify(cartdata));
-    display();
+    display(cartdata);
 })
 let quantity=document.createElement("span");
 quantity.innerHTML=e.quantity;
@@ -58,7 +58,7 @@ increment.innerHTML="+";
 increment.addEventListener("click",function(){
     e.quantity++;
     localStorage.setItem("cartlist",JSON.stringify(cartdata));
-    display();
+    display(cartdata);
 })
 let buttdiv=document.createElement("div");
 buttdiv.setAttribute("id","buttdiv");
@@ -108,6 +108,6 @@ total.innerHTML=`₹${sum}`;
   
     let payment=document.getElementById("payment");
     payment.addEventListener("click",function(){
-        window.location.href="http://127.0.0.1:5501/checkout.html";
+        window.location.href="http://127.0.0.1:5500/-ripe-receipt-7221/checkout.html";
     })
     display(cartdata);
