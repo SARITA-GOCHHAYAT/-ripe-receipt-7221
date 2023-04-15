@@ -45,15 +45,6 @@
             justify-content: space-around;
             text-align: center;
         }
-        /* #navright>input {
-            width: 40%;
-            height: 35px;
-            background-color: rgb(214, 208, 208);
-            border: 1px solid rgb(214, 208, 208);
-            text-align: center;
-            border-radius: 5px;
-            margin: auto;
-        } */
         i{
             height: 30px;
             width: 30px;
@@ -78,24 +69,17 @@
             color: #5D9C59;
         }
         #navleftdiv>p>:hover {
-            color: #5D9C59;
+            color: #1d6319;
+            font-size: 15px;
+            font-weight: bolder; 
+            margin: 5px;   
         }
-
-       #navleftdiv>p:after {
-            content: "";
-            position: absolute;
-            background-color: #5D9C59;
-            height: 3px;
-            width: 0px;
-            left: 15px;
-            bottom: -10px;
-            align-items: center;
+        #navleftdiv>p>:hover sup{
+            color: red;
         }
-
-        #navleftdiv>p:hover:after {
-            width: 20px;
+        i:hover{
+            color: #1d6319;  
         }
-
         #top1,
         #top2 {
             width: 100%;
