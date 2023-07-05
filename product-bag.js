@@ -5,7 +5,7 @@
 
 let cont=document.getElementById("container");
 let search=document.getElementById("input");
-let api="https://63f59a1b3f99f5855dc408c8.mockapi.io/Assets/Products?";
+let api="https://63f59a1b3f99f5855dc408c8.mockapi.io/Assets/Products?type=bag||type=wallets";
 let wishdata=JSON.parse(localStorage.getItem("wishlist"))||[];
 let cartdata=JSON.parse(localStorage.getItem("cartlist"))||[];
 let empty=[];
